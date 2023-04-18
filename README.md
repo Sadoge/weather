@@ -1,16 +1,44 @@
-# weather
+# Flutter Weather App
 
-A new Flutter project.
+A simple weather app built with Flutter that displays current weather information for a specified city. The app makes use of the Weather API and demonstrates how to create and manage API calls, handle errors, and use the BLoC pattern for state management.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Fetch and display current weather information for a city
+- Show weather data, including temperature, humidity, and wind speed
+- Error handling for API requests
+- BLoC pattern for state management using `flutter_bloc`
+- Dependency injection using `get_it`
+- Secure API key storage using `flutter_dotenv`
 
-A few resources to get you started if this is your first Flutter project:
+## Setup
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Clone this repository:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+`git clone https://github.com/Sadoge/weather.git`
+
+
+2. Install the dependencies:
+
+`flutter pub get`
+
+3. Create a `.env` file in the project root and add your Weather API key:
+
+`WEATHER_API_KEY=your_api_key_here`
+
+4. Run the app:
+
+`flutter run`
+
+## Dependencies
+
+- [http](https://pub.dev/packages/http) for API requests
+- [json_annotation](https://pub.dev/packages/json_annotation) and [json_serializable](https://pub.dev/packages/json_serializable) for JSON serialization
+- [freezed](https://pub.dev/packages/freezed) for creating immutable classes
+- [flutter_bloc](https://pub.dev/packages/flutter_bloc) for state management
+- [get_it](https://pub.dev/packages/get_it) for dependency injection
+- [flutter_dotenv](https://pub.dev/packages/flutter_dotenv) for loading environment variables
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for more information.
