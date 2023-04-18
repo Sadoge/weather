@@ -7,7 +7,8 @@ const String baseUrl = 'http://api.weatherapi.com/v1';
 
 class WeatherRepositoryImpl implements WeatherRepository {
   @override
-  Future<Map<String, dynamic>> fetchCurrentWeather(String city) async {
+  Future<Map<String, dynamic>> fetchCurrentWeather(
+      {required String city}) async {
     final String? apiKey = dotenv.env['WEATHER_API_KEY'];
 
     final response = await http.get(

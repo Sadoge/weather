@@ -18,7 +18,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   void initState() {
     super.initState();
     weatherCubit = getIt<WeatherCubit>();
-    weatherCubit.getCurrentWeather('Iloilo');
+    weatherCubit.getCurrentWeather(city: 'Iloilo');
   }
 
   @override

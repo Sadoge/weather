@@ -9,10 +9,10 @@ class WeatherServiceImpl implements WeatherService {
   WeatherServiceImpl(this._weatherRepository);
 
   @override
-  Future<WeatherResponse> getCurrentWeather(String city) async {
+  Future<WeatherResponse> getCurrentWeather({required String city}) async {
     try {
       final Map<String, dynamic> weatherData =
-          await _weatherRepository.fetchCurrentWeather(city);
+          await _weatherRepository.fetchCurrentWeather(city: city);
       return WeatherResponse.fromJson(weatherData);
     } catch (e) {
       // Handle different types of exceptions, if necessary

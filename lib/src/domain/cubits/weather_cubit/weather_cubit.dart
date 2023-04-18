@@ -9,11 +9,11 @@ class WeatherCubit extends Cubit<WeatherCubitState> {
 
   WeatherCubit(this._weatherService) : super(const WeatherCubitState.initial());
 
-  Future<void> getCurrentWeather(String city) async {
+  Future<void> getCurrentWeather({required String city}) async {
     emit(const WeatherCubitState.pending());
     try {
       WeatherResponse weatherResponse =
-          await _weatherService.getCurrentWeather(city);
+          await _weatherService.getCurrentWeather(city: city);
       emit(WeatherCubitState.set(weatherResponse));
     } catch (e) {
       if (e is WeatherServiceException) {
