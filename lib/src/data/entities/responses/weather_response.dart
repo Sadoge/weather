@@ -22,7 +22,7 @@ class Location {
   final String country;
   final double lat;
   final double lon;
-  final String tzId;
+  final String? tzId;
   @JsonKey(name: 'localtime_epoch')
   final int localtimeEpoch;
   final String localtime;

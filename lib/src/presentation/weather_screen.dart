@@ -18,7 +18,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   void initState() {
     super.initState();
     weatherCubit = getIt<WeatherCubit>();
-    weatherCubit.getCurrentWeather('London');
+    weatherCubit.getCurrentWeather('Iloilo');
   }
 
   @override
@@ -37,16 +37,27 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   children: [
                     Text(
                       data.location.name,
-                      style: Theme.of(context).textTheme.labelLarge,
+                      style: Theme.of(context).textTheme.titleLarge,
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      "${data.current.tempC}",
-                      style: Theme.of(context).textTheme.labelMedium,
+                      "${data.current.tempC} °C",
+                      style: Theme.of(context).textTheme.titleMedium,
                       textAlign: TextAlign.center,
                     ),
                   ],
+                ),
+                error: (message) => Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    message,
+                    style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                        ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
                 orElse: () => const CircularProgressIndicator(),
               ),
