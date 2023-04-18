@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather/src/core/colors.dart';
 import 'package:weather/src/presentation/weather_screen.dart';
 
 class WeatherApp extends StatelessWidget {
@@ -9,7 +10,8 @@ class WeatherApp extends StatelessWidget {
     return MaterialApp(
       title: 'Weather App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: WeatherColors.background,
+        scaffoldBackgroundColor: WeatherColors.background,
       ),
       home: const WeatherScreen(),
     );
