@@ -28,10 +28,9 @@ jobs:
           flutter build web --release
 
       - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GH_PAGES_PAT }}@github.com/Sadoge/weather.git
-          gh-pages --dist build/web --message "Deploy to GitHub Pages" --dotfiles
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAGES_PAT }}
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: build/web
+          commit_message: "Deploy to GitHub Pages"
+          github_token: ${{ secrets.GH_PAGES_PAT }}
