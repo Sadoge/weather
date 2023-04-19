@@ -25,7 +25,7 @@ jobs:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
         run: |
           flutter config --enable-web
-          flutter build web --release --base-href '/'
+          flutter build web --release --base-href '/weather/'
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
