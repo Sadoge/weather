@@ -8,6 +8,7 @@ part 'forecast_day.g.dart';
 @JsonSerializable()
 class ForecastDay {
   final String date;
+  @JsonKey(name: 'day')
   final ForecastDayInfo dayInfo;
   final Astro astro;
   @JsonKey(name: 'hour')

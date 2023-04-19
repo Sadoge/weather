@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:weather/src/data/entities/forecast/forecast_day.dart';
+import 'package:weather/src/data/entities/forecast/forecast.dart';
 import 'package:weather/src/data/entities/weather/current.dart';
 import 'package:weather/src/data/entities/weather/location.dart';
 
@@ -9,13 +9,12 @@ part 'weather_forecast.g.dart';
 class WeatherForecast {
   final Location location;
   final Current current;
-  @JsonKey(name: 'forecastday')
-  final List<ForecastDay> forecastDays;
+  final Forecast forecast;
 
   WeatherForecast({
     required this.location,
     required this.current,
-    required this.forecastDays,
+    required this.forecast,
   });
 
   factory WeatherForecast.fromJson(Map<String, dynamic> json) =>

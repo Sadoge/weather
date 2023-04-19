@@ -8,8 +8,7 @@ part of 'forecast_day.dart';
 
 ForecastDay _$ForecastDayFromJson(Map<String, dynamic> json) => ForecastDay(
       date: json['date'] as String,
-      dayInfo:
-          ForecastDayInfo.fromJson(json['dayInfo'] as Map<String, dynamic>),
+      dayInfo: ForecastDayInfo.fromJson(json['day'] as Map<String, dynamic>),
       astro: Astro.fromJson(json['astro'] as Map<String, dynamic>),
       forecastHours: (json['hour'] as List<dynamic>)
           .map((e) => ForecastHour.fromJson(e as Map<String, dynamic>))
@@ -19,7 +18,7 @@ ForecastDay _$ForecastDayFromJson(Map<String, dynamic> json) => ForecastDay(
 Map<String, dynamic> _$ForecastDayToJson(ForecastDay instance) =>
     <String, dynamic>{
       'date': instance.date,
-      'dayInfo': instance.dayInfo,
+      'day': instance.dayInfo,
       'astro': instance.astro,
       'hour': instance.forecastHours,
     };

@@ -10,14 +10,12 @@ WeatherForecast _$WeatherForecastFromJson(Map<String, dynamic> json) =>
     WeatherForecast(
       location: Location.fromJson(json['location'] as Map<String, dynamic>),
       current: Current.fromJson(json['current'] as Map<String, dynamic>),
-      forecastDays: (json['forecastday'] as List<dynamic>)
-          .map((e) => ForecastDay.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      forecast: Forecast.fromJson(json['forecast'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$WeatherForecastToJson(WeatherForecast instance) =>
     <String, dynamic>{
       'location': instance.location,
       'current': instance.current,
-      'forecastday': instance.forecastDays,
+      'forecast': instance.forecast,
     };
