@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:nominatim_geocoding/nominatim_geocoding.dart';
 import 'package:weather/src/core/colors.dart';
 import 'package:weather/src/core/dependency_injection.dart';
-import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weather/src/core/dimensions.dart';
 import 'package:weather/src/core/text_styles.dart';
@@ -76,20 +76,21 @@ class _WeatherScreenState extends State<WeatherScreen> {
     try {
       final position = await _determinePosition();
 
-      // Convert the coordinates to a city name
-      List<Placemark> placemarks = await placemarkFromCoordinates(
-        position.latitude,
-        position.longitude,
+      await NominatimGeocoding.init(reqCacheNum: 20);
+
+      Geocoding geocoding = await NominatimGeocoding.to.reverseGeoCoding(
+        Coordinate(
+          latitude: position.latitude,
+          longitude: position.longitude,
+        ),
       );
 
       // Get the city name from the first placemark
-      final cityName = placemarks.first.locality;
+      final cityName = geocoding.address.city.isNotEmpty
+          ? geocoding.address.city
+          : geocoding.address.state;
 
-      // Fetch the weather for the city
-      if (cityName != null) {
-        // weatherCubit.getCurrentWeather(city: cityName);
-        weatherForecastCubit.getWeatherForecast(city: cityName);
-      }
+      weatherForecastCubit.getWeatherForecast(city: cityName);
     } catch (e) {
       // Handle any errors that may occur
       debugPrint('Error getting location or fetching weather: $e');

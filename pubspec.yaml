@@ -22,9 +22,9 @@ dependencies:
   flutter_dotenv: ^5.0.2
   cached_network_image: ^3.2.3
   font_awesome_flutter: ^10.4.0
-  geocoding: ^2.1.0
   geolocator: ^9.0.2
   intl: ^0.18.1
+  nominatim_geocoding: ^0.0.6
 
 dev_dependencies:
   flutter_test:
@@ -40,6 +40,7 @@ flutter:
 
   assets:
     - assets/.env
+    - assets/images/
   
   fonts:
     - family: Poppins
