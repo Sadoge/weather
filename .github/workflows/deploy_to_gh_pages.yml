@@ -33,6 +33,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: Sadoge/weather
           branch: gh-pages
-          folder: /build/web
+          folder: build/web
           clean: true
           commit-message: "Deploy to GitHub Pages"
