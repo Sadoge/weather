@@ -28,9 +28,11 @@ jobs:
           flutter build web --release
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          target_branch: gh-pages
-          build_dir: build/web
-          commit_message: "Deploy to GitHub Pages"
-          gh_pat: ${{ secrets.GH_PAGES_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Sadoge/weather
+          branch: gh-pages
+          folder: build/web
+          clean: true
+          commit-message: "Deploy to GitHub Pages"
