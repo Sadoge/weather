@@ -30,6 +30,10 @@ A simple weather app built with Flutter that displays current weather informatio
 
 `flutter run`
 
+5. Demo
+
+A live version of the app is available [here](https://sadoge.github.io/weather/)
+
 ## Dependencies
 
 - [http](https://pub.dev/packages/http) for API requests
