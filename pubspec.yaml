@@ -22,6 +22,8 @@ dependencies:
   flutter_dotenv: ^5.0.2
   cached_network_image: ^3.2.3
   font_awesome_flutter: ^10.4.0
+  geocoding: ^2.1.0
+  geolocator: ^9.0.2
 
 dev_dependencies:
   flutter_test:
@@ -41,11 +43,11 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-        - asset: fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
           weight: 300
-        - asset: fonts/Poppins-Regular.ttf
-        - asset: fonts/Poppins-Medium.ttf
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
           weight: 500
-        - asset: fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
           weight: 700
   

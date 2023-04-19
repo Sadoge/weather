@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather/src/core/colors.dart';
-import 'package:weather/src/presentation/weather_screen.dart';
+import 'package:weather/src/presentation/dashboard_screen.dart';
 
 class WeatherApp extends StatelessWidget {
   const WeatherApp({super.key});
@@ -13,7 +13,7 @@ class WeatherApp extends StatelessWidget {
         primaryColor: WeatherColors.background,
         scaffoldBackgroundColor: WeatherColors.background,
       ),
-      home: const WeatherScreen(),
+      home: const DashboardScreen(),
     );
   }
 }
