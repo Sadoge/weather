@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
+import 'package:weather/src/core/config.dart';
 import 'package:weather/src/data/repositories/weather_repository/weather_repository.dart';
 
 const String baseUrl = 'http://api.weatherapi.com/v1';
@@ -9,7 +9,7 @@ class WeatherRepositoryImpl implements WeatherRepository {
   late String? apiKey;
 
   WeatherRepositoryImpl() {
-    apiKey = dotenv.env['WEATHER_API_KEY'];
+    apiKey = Config.apiKey;
   }
 
   @override
