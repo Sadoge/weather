@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather/src/core/colors.dart';
 import 'package:weather/src/core/text_styles.dart';
-import 'package:weather/src/presentation/weather_screen.dart';
+import 'package:weather/src/presentation/cities/cities_screen.dart';
+import 'package:weather/src/presentation/weather/weather_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -16,7 +17,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   final List<Widget> _screens = [
     const WeatherScreen(),
-    Container(),
+    const CitiesScreen(),
   ];
 
   void _onItemTapped(int index) {

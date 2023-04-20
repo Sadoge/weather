@@ -1,23 +1,34 @@
 // lib/src/domain/cubits/cities_cubit/cities_cubit.dart
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather/src/data/entities/responses/weather_response.dart';
 import 'package:weather/src/domain/cubits/cities_cubit/cities_cubit_state.dart';
 import 'package:weather/src/domain/services/cities_service/cities_service.dart';
+import 'package:weather/src/domain/services/weather_service/weather_service.dart';
 
 class CitiesCubit extends Cubit<CitiesCubitState> {
   final CitiesService citiesService;
+  final WeatherService weatherService;
 
-  CitiesCubit({required this.citiesService})
-      : super(const CitiesCubitState.initial());
+  CitiesCubit({
+    required this.citiesService,
+    required this.weatherService,
+  }) : super(const CitiesCubitState.initial());
 
   Future<void> getCities() async {
-    emit(const CitiesCubitState.pending());
-    try {
-      final cities = await citiesService.getCities();
-      emit(CitiesCubitState.set(cities));
-    } catch (e) {
-      emit(CitiesCubitState.error(e.toString()));
+    final cities = await citiesService.getCities();
+    final citiesWeather = <WeatherResponse>[];
+
+    for (final city in cities) {
+      try {
+        final weather = await weatherService.getCurrentWeather(city: city);
+        citiesWeather.add(weather);
+      } catch (e) {
+        emit(CitiesCubitState.error(e.toString()));
+      }
     }
+
+    emit(CitiesCubitState.set(citiesWeather));
   }
 
   Future<void> addCity(String cityName) async {

@@ -20,7 +20,7 @@ mixin _$CitiesCubitState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() pending,
-    required TResult Function(List<String> cities) set,
+    required TResult Function(List<WeatherResponse> cities) set,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$CitiesCubitState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? pending,
-    TResult? Function(List<String> cities)? set,
+    TResult? Function(List<WeatherResponse> cities)? set,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$CitiesCubitState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? pending,
-    TResult Function(List<String> cities)? set,
+    TResult Function(List<WeatherResponse> cities)? set,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -125,7 +125,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() pending,
-    required TResult Function(List<String> cities) set,
+    required TResult Function(List<WeatherResponse> cities) set,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -136,7 +136,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? pending,
-    TResult? Function(List<String> cities)? set,
+    TResult? Function(List<WeatherResponse> cities)? set,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -147,7 +147,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? pending,
-    TResult Function(List<String> cities)? set,
+    TResult Function(List<WeatherResponse> cities)? set,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -238,7 +238,7 @@ class _$_Pending implements _Pending {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() pending,
-    required TResult Function(List<String> cities) set,
+    required TResult Function(List<WeatherResponse> cities) set,
     required TResult Function(String message) error,
   }) {
     return pending();
@@ -249,7 +249,7 @@ class _$_Pending implements _Pending {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? pending,
-    TResult? Function(List<String> cities)? set,
+    TResult? Function(List<WeatherResponse> cities)? set,
     TResult? Function(String message)? error,
   }) {
     return pending?.call();
@@ -260,7 +260,7 @@ class _$_Pending implements _Pending {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? pending,
-    TResult Function(List<String> cities)? set,
+    TResult Function(List<WeatherResponse> cities)? set,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -317,7 +317,7 @@ abstract class _$$_SetCopyWith<$Res> {
   factory _$$_SetCopyWith(_$_Set value, $Res Function(_$_Set) then) =
       __$$_SetCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<String> cities});
+  $Res call({List<WeatherResponse> cities});
 }
 
 /// @nodoc
@@ -336,7 +336,7 @@ class __$$_SetCopyWithImpl<$Res>
       null == cities
           ? _value._cities
           : cities // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<WeatherResponse>,
     ));
   }
 }
@@ -344,11 +344,11 @@ class __$$_SetCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Set implements _Set {
-  const _$_Set(final List<String> cities) : _cities = cities;
+  const _$_Set(final List<WeatherResponse> cities) : _cities = cities;
 
-  final List<String> _cities;
+  final List<WeatherResponse> _cities;
   @override
-  List<String> get cities {
+  List<WeatherResponse> get cities {
     if (_cities is EqualUnmodifiableListView) return _cities;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_cities);
@@ -382,7 +382,7 @@ class _$_Set implements _Set {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() pending,
-    required TResult Function(List<String> cities) set,
+    required TResult Function(List<WeatherResponse> cities) set,
     required TResult Function(String message) error,
   }) {
     return set(cities);
@@ -393,7 +393,7 @@ class _$_Set implements _Set {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? pending,
-    TResult? Function(List<String> cities)? set,
+    TResult? Function(List<WeatherResponse> cities)? set,
     TResult? Function(String message)? error,
   }) {
     return set?.call(cities);
@@ -404,7 +404,7 @@ class _$_Set implements _Set {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? pending,
-    TResult Function(List<String> cities)? set,
+    TResult Function(List<WeatherResponse> cities)? set,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -453,9 +453,9 @@ class _$_Set implements _Set {
 }
 
 abstract class _Set implements CitiesCubitState {
-  const factory _Set(final List<String> cities) = _$_Set;
+  const factory _Set(final List<WeatherResponse> cities) = _$_Set;
 
-  List<String> get cities;
+  List<WeatherResponse> get cities;
   @JsonKey(ignore: true)
   _$$_SetCopyWith<_$_Set> get copyWith => throw _privateConstructorUsedError;
 }
@@ -524,7 +524,7 @@ class _$_Error implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() pending,
-    required TResult Function(List<String> cities) set,
+    required TResult Function(List<WeatherResponse> cities) set,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -535,7 +535,7 @@ class _$_Error implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? pending,
-    TResult? Function(List<String> cities)? set,
+    TResult? Function(List<WeatherResponse> cities)? set,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -546,7 +546,7 @@ class _$_Error implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? pending,
-    TResult Function(List<String> cities)? set,
+    TResult Function(List<WeatherResponse> cities)? set,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

@@ -35,6 +35,9 @@ void setupDependencies() {
     () => WeatherForecastCubit(getIt<WeatherService>()),
   );
   getIt.registerFactory<CitiesCubit>(
-    () => CitiesCubit(citiesService: getIt<CitiesService>()),
+    () => CitiesCubit(
+      citiesService: getIt<CitiesService>(),
+      weatherService: getIt<WeatherService>(),
+    ),
   );
 }

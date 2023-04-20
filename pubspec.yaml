@@ -25,6 +25,7 @@ dependencies:
   intl: ^0.18.1
   nominatim_geocoding: ^0.0.6
   shared_preferences: ^2.1.0
+  flutter_slidable: ^3.0.0
 
 dev_dependencies:
   flutter_test:
